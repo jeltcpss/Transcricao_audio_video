@@ -29,7 +29,7 @@ async function transcription() {
             try {
                 const command = ffmpeg(video);
 
-                command.format('mp3').save(audio).on('end', () => {
+                command.format('mp3').save(audio).on('end', function(){
                     console.log('Processamento Finalizado');
                     resolve(audio);
                   });
